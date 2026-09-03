@@ -1,0 +1,211 @@
+/* Structural layout only — no colors, no fonts, no backgrounds.
+   Goal: consistent sizing/spacing so the app doesn't look broken,
+   without making any visual design decisions. */
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- Header / nav ---- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 16px;
+}
+
+/* ---- Avatars — same size everywhere ---- */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatar.sm {
+  width: 28px;
+  height: 28px;
+}
+
+.avatar-lg {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---- Post images — same size everywhere ---- */
+.post-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Post preview / full post ---- */
+.post-preview,
+.post-full {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.post-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username-line {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.post-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.post-meta {
+  display: flex;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ---- Comments ---- */
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.comment .text {
+  margin: 0;
+}
+
+.comment .name {
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+/* ---- Profile header ---- */
+.profile-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* ---- Profile preview row (friends, search results) ---- */
+.profile-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bio-line {
+  font-size: 0.85em;
+}
+
+/* ---- Forms — consistent field spacing, same width inputs ---- */
+.auth-form,
+.create-post {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 8px;
+}
+
+.error-msg {
+  font-size: 0.8em;
+}
+
+/* ---- Search input ---- */
+.search-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.search-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+/* ---- Feed tabs / splash tabs ---- */
+.feed-tabs,
+.splash-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---- Splash page ---- */
+.splash {
+  max-width: 400px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+/* ---- Empty states ---- */
+.empty-state {
+  text-align: center;
+  font-style: italic;
+  padding: 16px 0;
+}
+
+.section-title {
+  margin: 0;
+}

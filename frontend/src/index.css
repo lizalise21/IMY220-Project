@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --c-bg: 61 60 53;
+    --c-surface: 76 75 66;
+    --c-sand: 95 94 83;
+    --c-ink: 244 241 234;
+    --c-accent: 140 144 230;
+    --c-accent-dark: 116 120 212;
+    --c-on-accent: 29 28 24;
+    --c-danger: 255 140 140;
+  }
+  [data-theme='light'] {
+    color-scheme: light;
+    --c-bg: 235 232 224;
+    --c-surface: 250 248 243;
+    --c-sand: 221 217 205;
+    --c-ink: 47 46 41;
+    --c-accent: 98 102 214;
+    --c-accent-dark: 82 86 196;
+    --c-on-accent: 255 255 255;
+    --c-danger: 190 40 40;
+  }
+  body {
+    @apply bg-bg font-body text-ink antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-5 py-2 text-sm font-bold text-on-accent transition hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-ink/25 px-5 py-2 text-sm font-bold text-ink transition hover:bg-ink/10 disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center rounded-full border border-danger/60 px-5 py-2 text-sm font-bold text-danger transition hover:bg-danger/10;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink/20 bg-bg/60 px-4 py-2.5 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent focus:ring-2 focus:ring-accent/30;
+  }
+  .card {
+    @apply rounded-2xl bg-surface p-5 shadow-sm ring-1 ring-ink/10;
+  }
+  .tag {
+    @apply inline-block rounded-full bg-sand px-2.5 py-0.5 text-xs font-bold text-ink/80 transition hover:bg-accent hover:text-on-accent;
+  }
+  .link {
+    @apply font-bold text-accent hover:underline;
+  }
+  /* instant-photo frame, ties into the Frame(d) name */
+  .frame {
+    @apply rounded-md bg-white p-2 shadow-lg ring-1 ring-black/10;
+  }
+}
